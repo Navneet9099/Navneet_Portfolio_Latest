@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navneet Kesarwani | Full Stack Developer & DevOps Enthusiast</title>
+  <meta name="description"
+    content="Portfolio of Navneet Kesarwani — SDE Intern @ Codeinbound LLP, ACM Web Co-Head, and B.Tech CSE student at DIT University. Focused on React, TypeScript, Node.js, and cloud-native architectures.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Anti-FOUC/Flash blocking dark theme script -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('nk-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Header & Navigation -->
+  <header id="main-header" class="header-transparent">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="logo-link">NAVNEET KESARWANI</a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <a href="#works" class="nav-link">Works</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+          <span id="theme-icon">☀</span>
+        </button>
+        <a href="assets/Navneet_Kesarwani_Resume_6.pdf" class="nav-btn" download="Navneet_Kesarwani_Resume.pdf">
+          <span>Resume</span>
+          <svg class="icon-download" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger -->
+      <button class="hamburger-menu" id="hamburger-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-menu">
+    <nav class="nav-mobile-links">
+      <a href="#works" class="mobile-nav-link">Works</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="assets/Navneet_Kesarwani_Resume_6.pdf" class="mobile-nav-btn" download="Navneet_Kesarwani_Resume.pdf">
+        <span>Download Resume</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+      </a>
+      <div class="mobile-theme-toggle-wrap">
+        <button id="mobile-theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+          <span id="mobile-theme-icon">☀</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-text-wrap reveal">
+          <h1 class="hero-title">NAVNEET<br>KESARWANI</h1>
+          <p class="hero-subtitle">Full Stack Developer & DevOps Enthusiast</p>
+
+          <div class="hero-meta-list">
+            <span class="hero-meta-item">Dehradun, India</span>
+            <span class="hero-meta-divider">·</span>
+            <span class="hero-meta-item">DIT University '27</span>
+          </div>
+
+          <p class="hero-roles">
+            SDE Intern @ Codeinbound LLP <span class="accent-dot">•</span> ACM Web Co-Head
+          </p>
+
+          <div class="hero-status">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Open to Full Stack / Frontend opportunities</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#works" class="cta-link-btn">
+              <span>View Works</span>
+              <svg class="arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="19 12 12 19 5 12" />
+              </svg>
+            </a>
+            <a href="assets/Navneet_Kesarwani_Resume_6.pdf" class="cta-link-btn secondary"
+              download="Navneet_Kesarwani_Resume.pdf">
+              <span>Download Resume</span>
+              <svg class="arrow-up" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <a href="#works" class="scroll-arrow" aria-label="Scroll to Works">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider reveal"></div>
+
+    <!-- Works Section -->
+    <section id="works" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-label">WORKS</h2>
+          <div class="hairline-divider"></div>
+        </div>
+
+        <div class="works-list">
+
+          <!-- Project 1: AI Resume Analyzer & ATS Optimizer -->
+          <div class="work-item reveal" id="work-resume-analyzer">
+            <button class="work-row-header" aria-expanded="false" aria-controls="work-details-1">
+              <span class="work-title">AI Resume Analyzer & ATS Optimizer</span>
+              <span class="work-tags-summary">React · FastAPI · GCP</span>
+              <span class="work-year">2026</span>
+              <span class="work-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </button>
+            <div class="work-details" id="work-details-1">
+              <div class="work-details-inner">
+                <div class="work-meta-grid">
+                  <div>
+                    <span class="detail-label">ROLE</span>
+                    <p class="detail-value">Solo Developer / Full-Stack</p>
+                  </div>
+                  <div>
+                    <span class="detail-label">STATUS</span>
+                    <p class="detail-value">Deployed on GCP Cloud Run</p>
+                  </div>
+                </div>
+                <div class="work-description">
+                  <p>Built a full-stack AI-powered resume analyzer that parses PDF resumes and generates ATS scores with
+                    skill-gap analysis using Groq's Llama 3.3 70B LLM. Implements JWT authentication, persistent
+                    analysis history, and a JD-matching system that flags missing skills against target job
+                    descriptions. Containerized with Docker Compose (Nginx + Uvicorn + PostgreSQL) and deployed via
+                    GitHub Actions CI/CD pipeline to GCP Cloud Run.</p>
+                </div>
+                <div class="work-tech-tags">
+                  <span class="skill-pill">React 18</span>
+                  <span class="skill-pill">TypeScript</span>
+                  <span class="skill-pill">FastAPI</span>
+                  <span class="skill-pill">Groq AI</span>
+                  <span class="skill-pill">Docker</span>
+                  <span class="skill-pill">GCP Cloud Run</span>
+                  <span class="skill-pill">PostgreSQL</span>
+                  <span class="skill-pill">GitHub Actions CI/CD</span>
+                  <span class="skill-pill">JWT</span>
+                </div>
+                <div class="work-links">
+                  <a href="https://github.com/Navneet9099/ai-resume-analyzer" target="_blank" rel="noopener noreferrer"
+                    class="project-btn">
+                    <span>GitHub Repository</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-btn">
+                    <span>Live Deployment</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Sphurti Sports Platform -->
+          <div class="work-item reveal" id="work-sphurti">
+            <button class="work-row-header" aria-expanded="false" aria-controls="work-details-2">
+              <span class="work-title">Sphurti Sports Fest 2026</span>
+              <span class="work-tags-summary">React.js · Node.js · MongoDB</span>
+              <span class="work-year">2026</span>
+              <span class="work-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </button>
+            <div class="work-details" id="work-details-2">
+              <div class="work-details-inner">
+                <div class="work-meta-grid">
+                  <div>
+                    <span class="detail-label">ROLE</span>
+                    <p class="detail-value">Technical Team Head</p>
+                  </div>
+                  <div>
+                    <span class="detail-label">ORGANIZATION</span>
+                    <p class="detail-value">DIT University</p>
+                  </div>
+                </div>
+                <div class="work-description">
+                  <p>Led a 10-person developer team delivering a full-stack sports fest platform within a 3-month
+                    deadline. Managed end-to-end: planning, task allocation, code review, and deployment. Implemented
+                    live score updates, event registration, and dynamic data handling. Deployed on DIT University server
+                    with reliable uptime during the live event.</p>
+                </div>
+                <div class="work-tech-tags">
+                  <span class="skill-pill">React.js</span>
+                  <span class="skill-pill">Node.js</span>
+                  <span class="skill-pill">MongoDB</span>
+                  <span class="skill-pill">GoDaddy / University Server</span>
+                  <span class="skill-pill">Team Leadership</span>
+                  <span class="skill-pill">API Integration</span>
+                </div>
+                <div class="work-links">
+                  <a href="https://github.com/orgs/sphurtidit/repositories" target="_blank" rel="noopener noreferrer"
+                    class="project-btn">
+                    <span>GitHub Repository</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                  <a href="https://sphurti.dituniversity.edu.in/" target="_blank" rel="noopener noreferrer"
+                    class="project-btn">
+                    <span>Live Deployment</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: NMS-WEB -->
+          <div class="work-item reveal" id="work-nms">
+            <button class="work-row-header" aria-expanded="false" aria-controls="work-details-3">
+              <span class="work-title">NMS-WEB Enterprise Dashboard</span>
+              <span class="work-tags-summary">React · Redux · TypeScript</span>
+              <span class="work-year">2025</span>
+              <span class="work-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </button>
+            <div class="work-details" id="work-details-3">
+              <div class="work-details-inner">
+                <div class="work-meta-grid">
+                  <div>
+                    <span class="detail-label">ROLE</span>
+                    <p class="detail-value">Software Development Intern</p>
+                  </div>
+                  <div>
+                    <span class="detail-label">ORGANIZATION</span>
+                    <p class="detail-value">Codeinbound LLP</p>
+                  </div>
+                </div>
+                <div class="work-description">
+                  <p>Working on an enterprise Network Management System (NMS-WEB) application. Resolved 30+ critical
+                    frontend UI bugs, engineered highly responsive interfaces, optimized performance across 10+ pages,
+                    improved browser compatibility, and drafted formal Root Cause Analysis (RCA) documents for
+                    production issues.</p>
+                </div>
+                <div class="work-tech-tags">
+                  <span class="skill-pill">React 18</span>
+                  <span class="skill-pill">Redux Toolkit</span>
+                  <span class="skill-pill">TypeScript</span>
+                  <span class="skill-pill">Ant Design</span>
+                  <span class="skill-pill">REST APIs</span>
+                  <span class="skill-pill">Cross-Browser Debugging</span>
+                </div>
+                <div class="work-links">
+                  <a href="https://github.com/codeinboundllp/nms-web" target="_blank" rel="noopener noreferrer"
+                    class="project-btn">
+                    <span>GitHub Repository</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Youthopia Fest Website -->
+          <div class="work-item reveal" id="work-youthopia">
+            <button class="work-row-header" aria-expanded="false" aria-controls="work-details-4">
+              <span class="work-title">Youthopia Fest Website</span>
+              <span class="work-tags-summary">React · Vue · REST APIs</span>
+              <span class="work-year">2024</span>
+              <span class="work-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </span>
+            </button>
+            <div class="work-details" id="work-details-4">
+              <div class="work-details-inner">
+                <div class="work-meta-grid">
+                  <div>
+                    <span class="detail-label">ROLE</span>
+                    <p class="detail-value">Frontend Developer</p>
+                  </div>
+                  <div>
+                    <span class="detail-label">ORGANIZATION</span>
+                    <p class="detail-value">ACM Student Chapter</p>
+                  </div>
+                </div>
+                <div class="work-description">
+                  <p>Built responsive event, profile, and registration pages for DIT University's Youthopia Fest.
+                    Developed intuitive layout features, handled user registration states, and integrated REST APIs for
+                    real-time event updates and scheduling data.</p>
+                </div>
+                <div class="work-tech-tags">
+                  <span class="skill-pill">React.js</span>
+                  <span class="skill-pill">Vue.js</span>
+                  <span class="skill-pill">REST APIs</span>
+                  <span class="skill-pill">TailwindCSS</span>
+                  <span class="skill-pill">JavaScript (ES6)</span>
+                </div>
+                <div class="work-links">
+                  <a href="https://github.com/Youthopia-dit" target="_blank" rel="noopener noreferrer"
+                    class="project-btn">
+                    <span>GitHub Repository</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider reveal"></div>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-label">ABOUT ME</h2>
+          <div class="hairline-divider"></div>
+        </div>
+
+        <div class="about-grid reveal">
+          <div class="about-summary">
+            <p class="about-lead">
+              React-focused Full Stack Developer and CS undergraduate (2023–27) with hands-on production experience in
+              UI development, REST API integration, and cross-platform debugging.
+            </p>
+            <p class="about-body">
+              Currently interning at Codeinbound LLP on an enterprise Network Management System (NMS-WEB). I focus on
+              building toward cloud-native, DevOps-first full-stack systems. Certified at the GCP Legend Tier, I'm
+              highly comfortable in React, TypeScript, Redux, Node.js, Docker, and Java.
+            </p>
+          </div>
+          <div class="about-availability">
+            <span class="availability-headline">CURRENT STATUS</span>
+            <div class="status-card">
+              <span class="status-indicator-dot pulsing"></span>
+              <div class="status-card-text">
+                <strong>Available for Opportunities</strong>
+                <p>Seeking Full Stack or Frontend roles globally</p>
+              </div>
+            </div>
+            <div class="location-card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Based in Dehradun, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider reveal"></div>
+
+    <!-- Experience / Journey Section -->
+    <section id="experience" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-label">EXPERIENCE</h2>
+          <div class="hairline-divider"></div>
+        </div>
+
+        <div class="experience-list">
+
+          <!-- Experience item 1 -->
+          <div class="experience-item reveal">
+            <div class="exp-header">
+              <div class="exp-role-org">
+                <h3 class="exp-role">Software Development Engineer Intern</h3>
+                <span class="exp-org">Codeinbound LLP</span>
+              </div>
+              <span class="exp-date">Dec 2025 – Present</span>
+            </div>
+            <div class="exp-content">
+              <p>Resolved 30+ frontend UI bugs across the NMS-WEB enterprise React/Redux/TypeScript app. Improved
+                cross-browser compatibility across 10+ pages. Wrote formal Root Cause Analysis (RCA) documents for
+                production issues.</p>
+            </div>
+          </div>
+
+          <!-- Experience item 2 -->
+          <div class="experience-item reveal">
+            <div class="exp-header">
+              <div class="exp-role-org">
+                <h3 class="exp-role">Technical Team Head — Sphurti Sports Fest 2026</h3>
+                <span class="exp-org">DIT University</span>
+              </div>
+              <span class="exp-date">Jan 2026 – Mar 2026</span>
+            </div>
+            <div class="exp-content">
+              <p>Led a 10-person developer team for full-stack sports fest platform. Managed planning, task allocation,
+                code reviews, and deployment on university servers.</p>
+            </div>
+          </div>
+
+          <!-- Experience item 3 -->
+          <div class="experience-item reveal">
+            <div class="exp-header">
+              <div class="exp-role-org">
+                <h3 class="exp-role">Frontend Developer — Youthopia Fest</h3>
+                <span class="exp-org">ACM Student Chapter</span>
+              </div>
+              <span class="exp-date">2024 – 2025</span>
+            </div>
+            <div class="exp-content">
+              <p>Built responsive event, profile, and registration pages. Integrated REST APIs for real-time event
+                updates.</p>
+            </div>
+          </div>
+
+          <!-- Experience item 4 -->
+          <div class="experience-item reveal">
+            <div class="exp-header">
+              <div class="exp-role-org">
+                <h3 class="exp-role">ACM Web Co-Head</h3>
+                <span class="exp-org">DIT University</span>
+              </div>
+              <span class="exp-date">Mar 2025 – Present</span>
+            </div>
+            <div class="exp-content">
+              <p>Mentoring 50+ junior developers, conducting technical workshops, and leading web initiatives across the
+                campus.</p>
+            </div>
+          </div>
+
+          <!-- Experience item 5 -->
+          <div class="experience-item reveal">
+            <div class="exp-header">
+              <div class="exp-role-org">
+                <h3 class="exp-role">B.Tech Computer Science & Engineering</h3>
+                <span class="exp-org">DIT University</span>
+              </div>
+              <span class="exp-date">2023 – 2027</span>
+            </div>
+            <div class="exp-content">
+              <p>Specialization: Full Stack Development & DevOps. CGPA active and focused on cloud-native application
+                engineering.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider reveal"></div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-label">SKILLS</h2>
+          <div class="hairline-divider"></div>
+        </div>
+
+        <div class="skills-wrapper reveal">
+
+          <!-- Category 1: Frontend -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">Frontend</h3>
+            <div class="skills-tag-cloud">
+              <span class="skill-tag"><i class="devicon-react-original"></i>React.js</span>
+              <span class="skill-tag"><i class="devicon-redux-original"></i>Redux</span>
+              <span class="skill-tag"><i class="devicon-typescript-plain"></i>TypeScript</span>
+              <span class="skill-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
+              <span class="skill-tag"><i class="devicon-vuejs-plain"></i>Vue.js</span>
+              <span class="skill-tag"><i class="devicon-html5-plain"></i>HTML5</span>
+              <span class="skill-tag"><i class="devicon-css3-plain"></i>CSS3</span>
+              <span class="skill-tag"><i class="devicon-tailwindcss-plain"></i>TailwindCSS</span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 22 8.5 22 19.5 12 22 2 19.5 2 8.5 12 2"></polygon>
+                  <line x1="12" y1="2" x2="12" y2="22"></line>
+                  <line x1="2" y1="8.5" x2="22" y2="8.5"></line>
+                </svg>
+                Ant Design
+              </span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+                REST APIs
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">Backend</h3>
+            <div class="skills-tag-cloud">
+              <span class="skill-tag"><i class="devicon-nodejs-plain"></i>Node.js</span>
+              <span class="skill-tag"><i class="devicon-express-original"></i>Express</span>
+              <span class="skill-tag"><i class="devicon-fastapi-plain"></i>FastAPI</span>
+              <span class="skill-tag"><i class="devicon-python-plain"></i>Python</span>
+              <span class="skill-tag"><i class="devicon-java-plain"></i>Java</span>
+              <span class="skill-tag"><i class="devicon-cplusplus-plain"></i>C++</span>
+            </div>
+          </div>
+
+          <!-- Category 3: DevOps & Cloud -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">DevOps & Cloud</h3>
+            <div class="skills-tag-cloud">
+              <span class="skill-tag"><i class="devicon-docker-plain"></i>Docker</span>
+              <span class="skill-tag"><i class="devicon-googlecloud-plain"></i>GCP (Legend Tier)</span>
+              <span class="skill-tag"><i class="devicon-githubactions-plain"></i>GitHub Actions</span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                </svg>
+                CI/CD
+              </span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+                </svg>
+                GCP Cloud Run
+              </span>
+              <span class="skill-tag"><i class="devicon-nginx-original"></i>Nginx</span>
+              <span class="skill-tag"><i class="devicon-linux-plain"></i>Linux</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Databases -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">Databases</h3>
+            <div class="skills-tag-cloud">
+              <span class="skill-tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
+              <span class="skill-tag"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
+              <span class="skill-tag"><i class="devicon-mysql-plain"></i>MySQL</span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+                </svg>
+                SQL
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 5: Tools & Methodologies -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">Tools</h3>
+            <div class="skills-tag-cloud">
+              <span class="skill-tag"><i class="devicon-git-plain"></i>Git</span>
+              <span class="skill-tag"><i class="devicon-github-original"></i>GitHub</span>
+              <span class="skill-tag"><i class="devicon-postman-plain"></i>Postman</span>
+              <span class="skill-tag"><i class="devicon-vscode-plain"></i>VS Code</span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                </svg>
+                Agile/Scrum
+              </span>
+              <span class="skill-tag"><i class="devicon-jest-plain"></i>Jest</span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m18 15-6-6-6 6"></path>
+                </svg>
+                Antigravity
+              </span>
+              <span class="skill-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+                Claude Code
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 6: Continuous Learning -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">Learning</h3>
+            <div class="skills-tag-cloud">
+              <span class="skill-tag"><i class="devicon-flutter-plain"></i>Flutter</span>
+              <span class="skill-tag"><i class="devicon-dart-plain"></i>Dart</span>
+              <span class="skill-tag"><i class="devicon-react-original"></i>React Native</span>
+              <span class="skill-tag"><i class="devicon-kotlin-plain"></i>Kotlin</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider reveal"></div>
+
+    <!-- Stats Section -->
+    <section id="numbers" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-label">NUMBERS</h2>
+          <div class="hairline-divider"></div>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="150" data-suffix="+">0+</span>
+            <p class="stat-desc">LeetCode queries solved</p>
+          </div>
+
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="4" data-suffix="">0</span>
+            <p class="stat-desc">Production systems deployed</p>
+          </div>
+
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="20" data-suffix="+">0+</span>
+            <p class="stat-desc">Junior developers mentored (ACM)</p>
+          </div>
+
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="6" data-suffix="+">0+</span>
+            <p class="stat-desc">Months industry internship experience</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider reveal"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding section-light">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-label">CONTACT</h2>
+          <div class="hairline-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Column 1: Copy/Details -->
+          <div class="contact-info reveal">
+            <p class="contact-pitch">
+              Open to Full Stack and Frontend Developer roles. Let's build something together.
+            </p>
+
+            <div class="contact-status-wrap">
+              <span class="status-indicator-dot pulsing"></span>
+              <span class="status-indicator-text">Open to Opportunities</span>
+            </div>
+
+            <div class="contact-links">
+              <a href="mailto:navneetkesarwani9@gmail.com" class="contact-link-row">
+                <span class="contact-link-label">EMAIL</span>
+                <span class="contact-link-value">navneetkesarwani9@gmail.com</span>
+              </a>
+              <a href="https://github.com/Navneet9099" target="_blank" rel="noopener noreferrer"
+                class="contact-link-row">
+                <span class="contact-link-label">GITHUB</span>
+                <span class="contact-link-value">github.com/Navneet9099</span>
+              </a>
+              <a href="https://linkedin.com/in/navneet-kesarwani-181319287" target="_blank" rel="noopener noreferrer"
+                class="contact-link-row">
+                <span class="contact-link-label">LINKEDIN</span>
+                <span class="contact-link-value">linkedin.com/in/navneet-kesarwani-181319287</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Form -->
+          <div class="contact-form-wrap reveal">
+            <!-- Formspree form. Will fall back to a styled feedback notification on click if YOUR_ACTUAL_FORM_ID is used -->
+            <form id="contact-form" action="https://formspree.io/f/YOUR_ACTUAL_FORM_ID" method="POST"
+              class="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">NAME</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">EMAIL</label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="Your email address"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">MESSAGE</label>
+                <textarea id="form-message" name="message" class="form-input text-area"
+                  placeholder="Write your message here..." rows="5" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="submit-btn" id="form-submit-btn">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+
+              <!-- Form messages toast style -->
+              <div id="form-status" class="form-status-msg"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <p class="footer-copyright">
+        © 2026 Navneet Kesarwani <span class="footer-bullet">•</span> Built with HTML, CSS & JavaScript
+      </p>
+      <a href="#" class="back-to-top" id="back-to-top">
+        <span>Back to top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5" />
+          <polyline points="5 12 12 5 19 12" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/counters.js"></script>
+  <script src="assets/js/form.js"></script>
+</body>
+
+</html>

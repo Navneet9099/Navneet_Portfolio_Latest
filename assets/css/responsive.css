@@ -1,0 +1,357 @@
+/* ==========================================================================
+   RESPONSIVE LAYOUTS & MEDIA QUERIES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Medium Screens (Tablets / Small Laptops — max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .section-padding {
+    padding: 95px 0;
+  }
+
+  /* Works List */
+  .work-row-header {
+    grid-template-columns: 2fr 1.2fr 0.6fr auto;
+    padding: 26px 10px;
+  }
+
+  /* About Section */
+  .about-grid {
+    gap: 40px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .about-availability {
+    padding: 30px;
+  }
+
+  /* Experience Section */
+  .experience-item {
+    grid-template-columns: 1.8fr 1fr;
+    gap: 30px;
+    padding: 36px 0;
+  }
+
+  .exp-role {
+    font-size: 20px;
+  }
+
+  /* Stats Section */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .contact-form-wrap {
+    padding: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Screens (Mobile Phones — max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-padding {
+    padding: 75px 0;
+  }
+
+  /* Navigation Bar Rebuild */
+  .nav-desktop {
+    display: none; /* Hide standard nav list on mobile */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show the mobile hamburger button */
+  }
+
+  .header-sticky {
+    height: 60px;
+  }
+
+  /* Hero Section Mobile */
+  .hero-section {
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .hero-text-wrap {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    margin-bottom: 20px;
+    line-height: 1.0;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 12px;
+  }
+
+  .hero-meta-list {
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .hero-roles {
+    margin-bottom: 20px;
+  }
+
+  .hero-status {
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .cta-link-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 10px;
+  }
+
+  .hero-scroll-indicator {
+    display: none; /* Hide bottom arrow since mobile height is natural scroll */
+  }
+
+  /* Works Section Mobile */
+  .work-row-header {
+    /* Collapses to title on left, year on right. Hidden tags. */
+    grid-template-columns: 1fr auto auto;
+    padding: 24px 0;
+    gap: 16px;
+  }
+
+  .work-item:hover .work-row-header {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+  }
+
+  .work-title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .work-tags-summary {
+    display: none; /* Hide mid-row tags to keep lines thin on small screens */
+  }
+
+  .work-year {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+
+  .work-arrow {
+    width: 16px;
+    height: 16px;
+  }
+
+  .work-details-inner {
+    padding: 0 0 32px 0;
+  }
+
+  .work-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .work-description {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .work-tech-tags {
+    margin-bottom: 24px;
+    gap: 6px;
+  }
+
+  .skill-pill {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .work-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .project-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+  }
+
+  /* About Section Mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-lead {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .about-body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-availability {
+    padding: 24px;
+  }
+
+  /* Experience Section Mobile */
+  .experience-item {
+    grid-template-columns: 1fr; /* Full width timeline stack */
+    gap: 16px;
+    padding: 28px 0;
+  }
+
+  .exp-role {
+    font-size: 18px;
+  }
+
+  .exp-org {
+    font-size: 13px;
+  }
+
+  .exp-date {
+    margin-top: 4px;
+  }
+
+  .exp-content {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* Skills Section Mobile */
+  .skills-wrapper {
+    grid-template-columns: 1fr; /* Stack categories */
+    gap: 32px;
+  }
+
+  .skill-tag {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  /* Stats Section Mobile */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns is perfect on mobile */
+    gap: 24px;
+  }
+
+  .stat-num {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .stat-desc {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  /* Contact Section Mobile */
+  .contact-grid {
+    grid-template-columns: 1fr; /* Stack contact info & form */
+    gap: 40px;
+  }
+
+  .contact-pitch {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .contact-links {
+    margin-top: 16px;
+  }
+
+  .contact-link-row {
+    padding: 14px 0;
+  }
+
+  .contact-link-value {
+    font-size: 14px;
+  }
+
+  .contact-form-wrap {
+    padding: 24px;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  /* Footer Mobile */
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .back-to-top {
+    font-size: 12px;
+  }
+
+  /* Mobile Theme Toggle Button sizing (44x44px min tap target) */
+  .mobile-theme-toggle-wrap {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mobile-theme-toggle-wrap .theme-toggle-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Extra Small Mobile Screens (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 42px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stack stats completely on narrow screens */
+    gap: 24px;
+  }
+}

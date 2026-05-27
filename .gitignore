@@ -1,0 +1,4 @@
+node_modules/
+.perfect_backup/
+.DS_Store
+*.log
