@@ -422,8 +422,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================================================
-  // 7. SMOOTH SCROLL FOR LINK ANCHORS
+  // 7. SMOOTH SCROLL FOR LINK ANCHORS & MOBILE COMPATIBILITY
   // ==========================================================================
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.matchMedia('(pointer: coarse)').matches;
+  
+  // Disable native scroll-behavior smooth only on non-touch desktop devices to prevent lerp conflicts
+  if (!isTouchDevice) {
+    document.documentElement.style.scrollBehavior = 'auto';
+  }
+
+  let targetY = window.scrollY;
+  let currentY = window.scrollY;
+  let isSmoothScrolling = false;
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -436,14 +447,149 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetElement) {
         const headerOffset = 70;
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        if (window.matchMedia('(hover: hover)').matches && !isTouchDevice) {
+          targetY = offsetPosition;
+          if (!isSmoothScrolling) {
+            isSmoothScrolling = true;
+            smoothScroll();
+          }
+        } else {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
+
+  // ==========================================================================
+  // 8. CODEDGAR STYLE DESKTOP LERP SMOOTH SCROLL (NON-TOUCH ONLY)
+  // ==========================================================================
+  if (window.matchMedia('(hover: hover)').matches && !isTouchDevice) {
+    window.addEventListener('wheel', (e) => {
+      // Respect prefers-reduced-motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      e.preventDefault();
+      targetY += e.deltaY * 0.9;
+      const maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) - window.innerHeight;
+      targetY  = Math.max(0, Math.min(targetY, maxScroll));
+      
+      if (!isSmoothScrolling) {
+        isSmoothScrolling = true;
+        smoothScroll();
+      }
+    }, { passive: false });
+
+    // Sync scroll target coordinates if scrolled by other means
+    window.addEventListener('scroll', () => {
+      if (!isSmoothScrolling) {
+        targetY = window.scrollY;
+        currentY = window.scrollY;
+      }
+    });
+  }
+
+  function smoothScroll() {
+    currentY += (targetY - currentY) * 0.1;
+    window.scrollTo(0, currentY);
+
+    if (Math.abs(targetY - currentY) > 0.5) {
+      requestAnimationFrame(smoothScroll);
+    } else {
+      isSmoothScrolling = false;
+    }
+  }
+
+  // ==========================================================================
+  // 9. NEW PREMIUM CYAN CUSTOM CURSOR & TRAILING RING (Codedgar Upgrade)
+  // ==========================================================================
+  const cursor = document.querySelector('.custom-cursor');
+  const ring = document.querySelector('.custom-cursor-ring');
+
+  if (cursor && ring) {
+    // Hide default cursor in CSS and track mouse movement
+    document.addEventListener('mousemove', (e) => {
+      // Direct positioning for inner dot
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+      
+      // Smooth delayed animation for outer ring
+      ring.animate({
+        left: `${e.clientX}px`,
+        top: `${e.clientY}px`
+      }, { duration: 100, fill: 'forwards' });
+    });
+
+    // Toggle expand state class on the body when hovering clickable elements
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, [role="button"], .work-item');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add('hovered');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('hovered');
+      });
+    });
+
+    // Hide custom cursor nodes when mouse leaves window and show when it enters
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+      ring.style.opacity = '1';
+    });
+  }
+
+  // ==========================================================================
+  // 10. WORKS LIST STAGGER ON FIRST VIEW
+  // ==========================================================================
+  const workItemsStagger = document.querySelectorAll('.work-item');
+  const worksObserver = new IntersectionObserver((entries, observer) => {
+    // Filter to only items that are intersecting
+    const intersecting = entries.filter(entry => entry.isIntersecting);
+    if (intersecting.length > 0) {
+      intersecting.forEach((entry, i) => {
+        const item = entry.target;
+        item.style.transitionDelay = `${i * 70}ms`;
+        item.classList.add('visible');
+        observer.unobserve(item);
+      });
+    }
+  }, {
+    root: null,
+    threshold: 0.1
+  });
+
+  workItemsStagger.forEach(item => {
+    worksObserver.observe(item);
+  });
+
+  // ==========================================================================
+  // 11. NAV ACTIVE HIGHLIGHT (SCROLL SPY)
+  // ==========================================================================
+  const spySections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('nav-active'));
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('nav-active');
+      }
+    });
+  }, { 
+    root: null,
+    threshold: 0.35,
+    rootMargin: '-10% 0px -40% 0px'
+  });
+
+  spySections.forEach(s => spyObserver.observe(s));
 
 });

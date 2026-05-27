@@ -32,6 +32,10 @@
 
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-ring"></div>
+
   <!-- Header & Navigation -->
   <header id="main-header" class="header-transparent">
     <div class="nav-container">
@@ -94,45 +98,67 @@
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
       <div class="container hero-container">
-        <div class="hero-text-wrap reveal">
-          <h1 class="hero-title">NAVNEET<br>KESARWANI</h1>
-          <p class="hero-subtitle">Full Stack Developer & DevOps Enthusiast</p>
+        <div class="hero-layout">
 
-          <div class="hero-meta-list">
-            <span class="hero-meta-item">Dehradun, India</span>
-            <span class="hero-meta-divider">·</span>
-            <span class="hero-meta-item">DIT University '27</span>
+          <!-- LEFT: existing text -->
+          <div class="hero-text">
+            <div class="hero-text-wrap reveal">
+              <h1 class="hero-title">NAVNEET<br>KESARWANI</h1>
+              <p class="hero-subtitle">Full Stack Developer & DevOps Enthusiast</p>
+
+              <div class="hero-meta-list">
+                <span class="hero-meta-item">Dehradun, India</span>
+                <span class="hero-meta-divider">·</span>
+                <span class="hero-meta-item">DIT University '27</span>
+              </div>
+
+              <p class="hero-roles">
+                SDE Intern @ Codeinbound LLP <span class="accent-dot">•</span> ACM Web Co-Head
+              </p>
+
+              <div class="hero-status">
+                <span class="pulse-dot"></span>
+                <span class="status-text">Open to Full Stack / Frontend opportunities</span>
+              </div>
+
+              <div class="hero-actions">
+                <a href="#works" class="cta-link-btn">
+                  <span>View Works</span>
+                  <svg class="arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="19 12 12 19 5 12" />
+                  </svg>
+                </a>
+                <a href="assets/Navneet_Kesarwani_Resume_6.pdf" class="cta-link-btn secondary"
+                  download="Navneet_Kesarwani_Resume.pdf">
+                  <span>Download Resume</span>
+                  <svg class="arrow-up" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
 
-          <p class="hero-roles">
-            SDE Intern @ Codeinbound LLP <span class="accent-dot">•</span> ACM Web Co-Head
-          </p>
-
-          <div class="hero-status">
-            <span class="pulse-dot"></span>
-            <span class="status-text">Open to Full Stack / Frontend opportunities</span>
+          <!-- RIGHT: profile photo -->
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-frame">
+              <img
+                src="assets/img/navneet.jpg"
+                alt="Navneet Kesarwani — Full Stack Developer"
+                class="hero-photo"
+                loading="eager"
+                draggable="false"
+              />
+              <!-- Decorative offset border frame — sits behind the photo -->
+              <div class="photo-border-frame"></div>
+            </div>
           </div>
 
-          <div class="hero-actions">
-            <a href="#works" class="cta-link-btn">
-              <span>View Works</span>
-              <svg class="arrow-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <polyline points="19 12 12 19 5 12" />
-              </svg>
-            </a>
-            <a href="assets/Navneet_Kesarwani_Resume_6.pdf" class="cta-link-btn secondary"
-              download="Navneet_Kesarwani_Resume.pdf">
-              <span>Download Resume</span>
-              <svg class="arrow-up" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
       <div class="hero-scroll-indicator">
@@ -151,6 +177,7 @@
 
     <!-- Works Section -->
     <section id="works" class="section-padding">
+      <span class="section-number" aria-hidden="true">01</span>
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-label">WORKS</h2>
@@ -409,6 +436,7 @@
 
     <!-- About Section -->
     <section id="about" class="section-padding section-light">
+      <span class="section-number" aria-hidden="true">02</span>
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-label">ABOUT ME</h2>
@@ -454,6 +482,7 @@
 
     <!-- Experience / Journey Section -->
     <section id="experience" class="section-padding">
+      <span class="section-number" aria-hidden="true">03</span>
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-label">EXPERIENCE</h2>
@@ -515,7 +544,7 @@
                 <h3 class="exp-role">ACM Web Co-Head</h3>
                 <span class="exp-org">DIT University</span>
               </div>
-              <span class="exp-date">Mar 2025 – Present</span>
+              <span class="exp-date">Sep 2024 – Sep 2025</span>
             </div>
             <div class="exp-content">
               <p>Mentoring 50+ junior developers, conducting technical workshops, and leading web initiatives across the
@@ -547,6 +576,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="section-padding section-light">
+      <span class="section-number" aria-hidden="true">04</span>
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-label">SKILLS</h2>
@@ -704,6 +734,7 @@
 
     <!-- Stats Section -->
     <section id="numbers" class="section-padding">
+      <span class="section-number" aria-hidden="true">05</span>
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-label">NUMBERS</h2>
@@ -741,6 +772,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section-padding section-light">
+      <span class="section-number" aria-hidden="true">06</span>
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-label">CONTACT</h2>
@@ -781,7 +813,7 @@
           <!-- Column 2: Form -->
           <div class="contact-form-wrap reveal">
             <!-- Formspree form. Will fall back to a styled feedback notification on click if YOUR_ACTUAL_FORM_ID is used -->
-            <form id="contact-form" action="https://formspree.io/f/YOUR_ACTUAL_FORM_ID" method="POST"
+            <form id="contact-form" action="https://formspree.io/f/mwvzaqob" method="POST"
               class="contact-form">
               <div class="form-group">
                 <label for="form-name" class="form-label">NAME</label>

@@ -25,6 +25,47 @@ const server = http.createServer((req, res) => {
   // Decode URL to handle spaces/special characters
   const decodedUrl = decodeURI(req.url);
 
+  // API Route for Local Contact Form
+  if (req.method === 'POST' && decodedUrl === '/api/contact') {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      try {
+        const contactData = JSON.parse(body);
+
+        console.log('\n📥 [NEW CONTACT MESSAGE RECEIVED]');
+        console.log(`👤 Name:    ${contactData.name}`);
+        console.log(`📧 Email:   ${contactData.email}`);
+        console.log(`💬 Message: ${contactData.message}`);
+        console.log('====================================\n');
+
+        const dataPath = path.join(__dirname, 'contacts.json');
+        let existing = [];
+        if (fs.existsSync(dataPath)) {
+          try {
+            existing = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+          } catch (e) {
+            existing = [];
+          }
+        }
+        contactData.timestamp = new Date().toLocaleString();
+        existing.push(contactData);
+        fs.writeFileSync(dataPath, JSON.stringify(existing, null, 2));
+
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ ok: true, message: 'Message saved locally!' }));
+      } catch (err) {
+        res.statusCode = 400;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ ok: false, error: 'Invalid JSON data' }));
+      }
+    });
+    return;
+  }
+
   // Resolve filepath (default to index.html for root path)
   let filePath = path.join(__dirname, decodedUrl === '/' ? 'index.html' : decodedUrl);
 

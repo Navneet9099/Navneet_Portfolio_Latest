@@ -53,13 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 5000);
     };
 
-    // 2. Placeholder Check (Emulate success for local testing before setup)
+    // 2. Local Endpoint Submission (Fallback if Formspree is not set up yet)
     if (actionUrl.includes('YOUR_ACTUAL_FORM_ID')) {
-      setTimeout(() => {
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          resetButton();
+          form.reset();
+          showStatus('✓ Message sent successfully! Saved to contacts.json and logged to terminal.', 'success');
+        } else {
+          resetButton();
+          showStatus('✗ Local dev server failed to process the message.', 'error');
+        }
+      } catch (error) {
         resetButton();
-        form.reset();
-        showStatus('✓ Message sent successfully! (Formspree Placeholder Mode: Make sure to replace YOUR_ACTUAL_FORM_ID in index.html with your actual Form ID when deploying!)', 'success');
-      }, 1000);
+        showStatus('✗ Could not reach local development server. Ensure it is running.', 'error');
+      }
       return;
     }
 
