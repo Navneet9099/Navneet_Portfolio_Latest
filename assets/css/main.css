@@ -261,6 +261,24 @@ h6 {
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.nav-logo-text {
+  fill: var(--text);
+  stroke: none;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 280px;
+  transition: fill var(--transition-fast);
 }
 
 .nav-desktop {

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    .txt {
+      fill: #111111;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 280px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .txt {
+        fill: #F5F2EE;
+      }
+    }
+  </style>
+  <text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle" class="txt">NK</text>
+</svg>

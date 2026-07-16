@@ -38,7 +38,7 @@ Inspired by the editorial grid aesthetic of Dion Pieters:
 │   │   ├── main.js           # Core layout scripts, sticky nav, preloader & canvas logic
 │   │   ├── counters.js       # requestAnimationFrame progressive statistics count-up
 │   │   └── form.js           # AJAX Formspree contact form handler with toast success notifications
-│   └── Navneet_Kesarwani_Resume_6.pdf # Direct-download PDF resume asset
+│   └── Navneet_Kesarwani_Resume_10.pdf # Direct-download PDF resume asset
 ├── .perfect_backup/          # Secure frozen-state local backup folder
 ├── .gitignore
 ├── index.html                # Semantically structured single-page layout (SEO Optimized)
